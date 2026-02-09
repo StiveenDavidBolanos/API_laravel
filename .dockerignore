@@ -1,0 +1,9 @@
+.git
+.env
+/vendor
+/node_modules
+storage/*.key
+docker-compose.yml
+phpunit.xml
+tests
+/storage/app/*.json
