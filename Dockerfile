@@ -35,7 +35,11 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 # Instalar dependencias de Composer (sin dependencias de desarrollo)
-RUN composer install --no-interaction --optimize-autoloader --no-dev
+# Usamos --no-scripts para evitar errores si faltan variables de entorno durante la construcción
+RUN composer install --no-interaction --optimize-autoloader --no-dev --no-scripts
+
+# Crear directorio para credenciales de Google (para que Render pueda montar el archivo secreto aquí)
+RUN mkdir -p /var/www/html/storage/app/google
 
 # Ajustar permisos de carpetas de almacenamiento
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache

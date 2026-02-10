@@ -1,5 +1,7 @@
 .git
 .env
+.env.backup
+.env.production
 /vendor
 /node_modules
 storage/*.key
@@ -7,3 +9,15 @@ docker-compose.yml
 phpunit.xml
 tests
 /storage/app/*.json
+/storage/credentials.json
+Homestead.json
+Homestead.yaml
+Thumbs.db
+.DS_Store
+.phpactor.json
+.phpunit.result.cache
+.fleet
+.idea
+.nova
+.vscode
+.zed
